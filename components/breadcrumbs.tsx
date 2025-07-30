@@ -13,7 +13,7 @@ interface BreadcrumbsProps {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav className="flex items-center space-x-1 text-sm text-muted-foreground mb-6">
-      <Link href="/" className="flex items-center hover:text-primary">
+      <Link href="/" className="flex items-center hover:text-foreground">
         <Home className="h-4 w-4" />
         <span className="sr-only">Home</span>
       </Link>
@@ -21,7 +21,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         <div key={index} className="flex items-center space-x-1">
           <ChevronRight className="h-4 w-4" />
           {item.href ? (
-            <Link href={item.href} className="hover:text-primary">
+            <Link href={item.href} className="hover:text-foreground">
               {item.label}
             </Link>
           ) : (

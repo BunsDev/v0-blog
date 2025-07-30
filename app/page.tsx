@@ -43,10 +43,10 @@ export default function HomePage() {
 
       {/* Featured Posts */}
       <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Featured Posts</h2>
-          <Button variant="outline" asChild className="shrink-0 w-fit bg-transparent">
-            <Link href="/posts" className="whitespace-nowrap">
+          <Button variant="outline" asChild>
+            <Link href="/posts">
               View All Posts <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -55,7 +55,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredPosts.map((post) => (
             <Link key={post.slug} href={`/posts/${post.slug}`}>
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                 <div className="aspect-video relative">
                   <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
                 </div>
@@ -71,14 +71,14 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="flex gap-2 flex-wrap">
+                    <div className="flex gap-2">
                       {post.tags.slice(0, 2).map((tag) => (
                         <Badge key={tag} variant="secondary">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground shrink-0">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <Heart className="h-4 w-4" />
                         {post.likes}
@@ -98,10 +98,10 @@ export default function HomePage() {
 
       {/* Categories */}
       <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Popular Categories</h2>
-          <Button variant="outline" asChild className="shrink-0 w-fit bg-transparent">
-            <Link href="/categories" className="whitespace-nowrap">
+          <Button variant="outline" asChild>
+            <Link href="/categories">
               View All Categories <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -110,7 +110,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {popularCategories.map((category) => (
             <Link key={category.slug} href={`/categories/${category.slug}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader>
                   <div className="aspect-video relative mb-4 rounded-lg overflow-hidden">
                     <Image
@@ -134,10 +134,10 @@ export default function HomePage() {
 
       {/* Authors */}
       <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Featured Authors</h2>
-          <Button variant="outline" asChild className="shrink-0 w-fit bg-transparent">
-            <Link href="/authors" className="whitespace-nowrap">
+          <Button variant="outline" asChild>
+            <Link href="/authors">
               View All Authors <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -146,7 +146,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredAuthors.map((author) => (
             <Link key={author.slug} href={`/authors/${author.slug}`}>
-              <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer h-full">
+              <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader>
                   <div className="w-20 h-20 mx-auto mb-4 relative rounded-full overflow-hidden">
                     <Image src={author.avatar || "/placeholder.svg"} alt={author.name} fill className="object-cover" />
@@ -165,10 +165,10 @@ export default function HomePage() {
 
       {/* Tags */}
       <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Popular Tags</h2>
-          <Button variant="outline" asChild className="shrink-0 w-fit bg-transparent">
-            <Link href="/tags" className="whitespace-nowrap">
+          <Button variant="outline" asChild>
+            <Link href="/tags">
               View All Tags <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
