@@ -10,6 +10,7 @@ import { tags } from "@/lib/data/tags"
 import { formatDate } from "@/lib/utils"
 import { ArrowRight, Calendar, User, Heart, MessageCircle } from "lucide-react"
 
+
 export default function HomePage() {
   const featuredPosts = posts.slice(0, 3)
   const popularCategories = categories.slice(0, 6)
@@ -17,9 +18,9 @@ export default function HomePage() {
   const popularTags = tags.slice(0, 12)
 
   return (
-    <div className="container py-8 space-y-16">
+    <div className="container py-8 space-y-16 ">
       {/* Hero Section */}
-      <section className="text-center space-y-6 animate-fade-slide-in">
+      <section className="text-center space-y-6 animate-fade-slide-in   ">
         <div className="space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             Welcome to <span className="text-primary">TechBlog</span>
@@ -42,7 +43,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Posts */}
-      <section className="space-y-8 animate-fade-slide-in">
+      <section className="space-y-8 animate-fade-slide-in delay-100">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Featured Posts</h2>
           <Button variant="outline" asChild>
@@ -53,9 +54,9 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredPosts.map((post) => (
+          {featuredPosts.map((post, i) => (
             <Link key={post.slug} href={`/posts/${post.slug}`}>
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
+              <Card className={`overflow-hidden hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in delay-200`}>
                 <div className="aspect-video relative">
                   <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
                 </div>
@@ -97,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section className="space-y-8 animate-fade-slide-in">
+      <section className="space-y-8 animate-fade-slide-in delay-300">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Popular Categories</h2>
           <Button variant="outline" asChild>
@@ -110,7 +111,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {popularCategories.map((category) => (
             <Link key={category.slug} href={`/categories/${category.slug}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in delay-400">
                 <CardHeader>
                   <div className="aspect-video relative mb-4 rounded-lg overflow-hidden">
                     <Image
@@ -133,7 +134,7 @@ export default function HomePage() {
       </section>
 
       {/* Authors */}
-      <section className="space-y-8 animate-fade-slide-in">
+      <section className="space-y-8 animate-fade-slide-in delay-400">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold">Featured Authors</h2>
           <Button variant="outline" asChild>
@@ -146,7 +147,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredAuthors.map((author) => (
             <Link key={author.slug} href={`/authors/${author.slug}`}>
-              <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
+              <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in delay-400">
                 <CardHeader>
                   <div className="w-20 h-20 mx-auto mb-4 relative rounded-full overflow-hidden">
                     <Image src={author.avatar || "/placeholder.svg"} alt={author.name} fill className="object-cover" />

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 export default function AuthorsPage() {
   return (
     <div className="container py-8">
-      <div className="animate-fade-slide-in">
+      <div className="animate-fade-slide-in ">
         <Breadcrumbs items={[{ label: "Authors" }]} />
       </div>
 
       <div className="space-y-8">
-        <div className="animate-fade-slide-in">
+        <div className="animate-fade-slide-in delay-100">
           <h1 className="text-4xl font-bold mb-4">Our Authors</h1>
           <p className="text-muted-foreground text-lg">
             Meet the talented individuals behind our content. Each author brings unique expertise and perspective to our
@@ -32,7 +32,7 @@ export default function AuthorsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {authors.map((author) => (
             <Link key={author.slug} href={`/authors/${author.slug}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in delay-200">
                 <CardHeader className="text-center">
                   <div className="w-24 h-24 mx-auto mb-4 relative rounded-full overflow-hidden">
                     <Image src={author.avatar || "/placeholder.svg"} alt={author.name} fill className="object-cover" />

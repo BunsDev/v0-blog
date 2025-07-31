@@ -18,7 +18,7 @@ export default function CategoriesPage() {
       </div>
 
       <div className="space-y-8">
-        <div className="animate-fade-slide-in">
+        <div className="animate-fade-slide-in delay-100">
           <h1 className="text-4xl font-bold mb-4">Categories</h1>
           <p className="text-muted-foreground text-lg">
             Explore our content organized by topic and find exactly what you're looking for.
@@ -28,7 +28,7 @@ export default function CategoriesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => (
             <Link key={category.slug} href={`/categories/${category.slug}`}>
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in delay-200">
                 <div className="aspect-video relative">
                   <Image
                     src={category.bannerImage || "/placeholder.svg"}

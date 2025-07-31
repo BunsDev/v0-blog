@@ -21,7 +21,7 @@ export default function AboutPage() {
 
       <div className="space-y-16">
         {/* Hero Section */}
-        <section className="text-center space-y-6 animate-fade-slide-in">
+        <section className="text-center space-y-6 animate-fade-slide-in delay-100">
           <h1 className="text-4xl md:text-5xl font-bold">About TechBlog</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We're a community of passionate developers, designers, and tech enthusiasts sharing knowledge, insights, and
@@ -30,7 +30,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-slide-in">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-slide-in delay-200">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">Our Mission</h2>
             <p className="text-muted-foreground text-lg">
@@ -44,15 +44,15 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="aspect-square relative rounded-lg overflow-hidden">
-            <Image src="/placeholder.svg?height=500&width=500" alt="Team collaboration" fill className="object-cover" />
+            <Image src="/img/swjlfibr.png" alt="Team collaboration" fill className="object-cover" />
           </div>
         </section>
 
         {/* Values Section */}
-        <section className="space-y-8 animate-fade-slide-in">
+        <section className="space-y-8 animate-fade-slide-in delay-300">
           <h2 className="text-3xl font-bold text-center">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center animate-fade-slide-in">
+            <Card className="text-center animate-fade-slide-in delay-300">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <BookOpen className="h-6 w-6 text-primary-foreground" />
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center animate-fade-slide-in">
+            <Card className="text-center animate-fade-slide-in delay-300">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <Users className="h-6 w-6 text-primary-foreground" />
@@ -80,7 +80,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center animate-fade-slide-in">
+            <Card className="text-center animate-fade-slide-in delay-300">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary-foreground" />

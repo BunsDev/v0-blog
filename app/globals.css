@@ -124,5 +124,9 @@
 }
 
 .animate-fade-slide-in {
-  animation: fade-slide-in 0.5s ease-out forwards;
+  opacity: 0;
+   animation-name: fade-slide-in;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }

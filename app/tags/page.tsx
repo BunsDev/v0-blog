@@ -16,7 +16,7 @@ export default function TagsPage() {
       </div>
 
       <div className="space-y-8">
-        <div className="animate-fade-slide-in">
+        <div className="animate-fade-slide-in delay-100">
           <h1 className="text-4xl font-bold mb-4">All Tags</h1>
           <p className="text-muted-foreground text-lg">
             Discover content by exploring our comprehensive tag system. Find posts about specific topics that interest
@@ -24,7 +24,7 @@ export default function TagsPage() {
           </p>
         </div>
 
-        <div className="animate-fade-slide-in">
+        <div className="animate-fade-slide-in delay-200">
           <TagsClient />
         </div>
       </div>
