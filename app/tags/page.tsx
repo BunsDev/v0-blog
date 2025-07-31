@@ -11,10 +11,12 @@ export const metadata: Metadata = {
 export default function TagsPage() {
   return (
     <div className="container py-8">
-      <Breadcrumbs items={[{ label: "Tags" }]} />
+      <div className="animate-fade-slide-in">
+        <Breadcrumbs items={[{ label: "Tags" }]} />
+      </div>
 
       <div className="space-y-8">
-        <div>
+        <div className="animate-fade-slide-in">
           <h1 className="text-4xl font-bold mb-4">All Tags</h1>
           <p className="text-muted-foreground text-lg">
             Discover content by exploring our comprehensive tag system. Find posts about specific topics that interest
@@ -22,7 +24,9 @@ export default function TagsPage() {
           </p>
         </div>
 
-        <TagsClient />
+        <div className="animate-fade-slide-in">
+          <TagsClient />
+        </div>
       </div>
     </div>
   )

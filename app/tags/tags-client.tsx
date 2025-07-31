@@ -27,7 +27,7 @@ export function TagsClient() {
   return (
     <div className="space-y-6">
       {/* Search */}
-      <div className="relative max-w-md">
+      <div className="relative max-w-md animate-fade-slide-in">
         <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Search tags..."
@@ -48,7 +48,7 @@ export function TagsClient() {
             <Badge
               key={tag.name}
               variant="outline"
-              className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors animate-fade-slide-in"
             >
               <Link href={`/tags/${tag.name}`} className="flex items-center gap-2">
                 #{tag.name}
@@ -59,7 +59,7 @@ export function TagsClient() {
         </div>
 
         {filteredTags.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-12 animate-fade-slide-in">
             <p className="text-muted-foreground">No tags found matching your search.</p>
           </div>
         )}

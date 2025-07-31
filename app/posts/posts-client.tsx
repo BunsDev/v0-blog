@@ -54,7 +54,7 @@ export function PostsClient() {
   return (
     <div className="space-y-8">
       {/* Filters */}
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col lg:flex-row gap-4 animate-fade-slide-in">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
@@ -108,7 +108,7 @@ export function PostsClient() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {paginatedPosts.map((post) => (
           <Link key={post.slug} href={`/posts/${post.slug}`}>
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer animate-fade-slide-in">
               <div className="aspect-video relative">
                 <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
               </div>
@@ -150,7 +150,7 @@ export function PostsClient() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center space-x-2">
+        <div className="flex justify-center items-center space-x-2 animate-fade-slide-in">
           <Button
             variant="outline"
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}

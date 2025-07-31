@@ -51,11 +51,13 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
 
   return (
     <div className="container py-8">
-      <Breadcrumbs items={[{ label: "Authors", href: "/authors" }, { label: author.name }]} />
+      <div className="animate-fade-slide-in">
+        <Breadcrumbs items={[{ label: "Authors", href: "/authors" }, { label: author.name }]} />
+      </div>
 
       <div className="space-y-8">
         {/* Author Profile */}
-        <div className="bg-muted/50 rounded-lg p-8">
+        <div className="bg-muted/50 rounded-lg p-8 animate-fade-slide-in">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
             <div className="w-32 h-32 relative rounded-full overflow-hidden flex-shrink-0">
               <Image src={author.avatar || "/placeholder.svg"} alt={author.name} fill className="object-cover" />
@@ -98,12 +100,15 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
 
         {/* Author's Posts */}
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold">Posts by {author.name}</h2>
+          <h2 className="text-2xl font-bold animate-fade-slide-in">Posts by {author.name}</h2>
 
           {authorPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {authorPosts.map((post) => (
-                <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <Card
+                  key={post.slug}
+                  className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-slide-in"
+                >
                   <div className="aspect-video relative">
                     <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
                   </div>
@@ -144,7 +149,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-12 animate-fade-slide-in">
               <p className="text-muted-foreground text-lg">No posts published yet.</p>
             </div>
           )}

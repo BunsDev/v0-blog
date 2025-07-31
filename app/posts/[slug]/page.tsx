@@ -67,11 +67,13 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="container py-8">
-      <Breadcrumbs items={[{ label: "Posts", href: "/posts" }, { label: post.title }]} />
+      <div className="animate-fade-slide-in">
+        <Breadcrumbs items={[{ label: "Posts", href: "/posts" }, { label: post.title }]} />
+      </div>
 
       <article className="max-w-4xl mx-auto">
         {/* Header */}
-        <header className="space-y-6 mb-8">
+        <header className="space-y-6 mb-8 animate-fade-slide-in">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{post.title}</h1>
             <p className="text-xl text-muted-foreground">{post.description}</p>
@@ -110,7 +112,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+              <Badge key={tag} variant="secondary" className="animate-fade-slide-in">
                 <Link href={`/tags/${tag}`}>#{tag}</Link>
               </Badge>
             ))}
@@ -139,12 +141,12 @@ export default async function PostPage({ params }: PostPageProps) {
         </header>
 
         {/* Featured Image */}
-        <div className="aspect-video relative mb-8 rounded-lg overflow-hidden">
+        <div className="aspect-video relative mb-8 rounded-lg overflow-hidden animate-fade-slide-in">
           <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
         </div>
 
         {/* Content */}
-        <div className="prose prose-zinc dark:prose-invert max-w-none">
+        <div className="prose prose-zinc dark:prose-invert max-w-none animate-fade-slide-in">
           <ReactMarkdown>{post.body}</ReactMarkdown>
         </div>
 
@@ -152,7 +154,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Author Bio */}
         {author && (
-          <div className="bg-muted/50 rounded-lg p-6 mb-8">
+          <div className="bg-muted/50 rounded-lg p-6 mb-8 animate-fade-slide-in">
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 relative rounded-full overflow-hidden flex-shrink-0">
                 <Image src={author.avatar || "/placeholder.svg"} alt={author.name} fill className="object-cover" />
@@ -188,11 +190,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fade-slide-in">
             <h2 className="text-2xl font-bold">Related Posts</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedPosts.map((relatedPost) => (
-                <div key={relatedPost.slug} className="space-y-3">
+                <div key={relatedPost.slug} className="space-y-3 animate-fade-slide-in">
                   <div className="aspect-video relative rounded-lg overflow-hidden">
                     <Image
                       src={relatedPost.image || "/placeholder.svg"}

@@ -49,11 +49,13 @@ export default async function TagPage({ params }: TagPageProps) {
 
   return (
     <div className="container py-8">
-      <Breadcrumbs items={[{ label: "Tags", href: "/tags" }, { label: `#${tag}` }]} />
+      <div className="animate-fade-slide-in">
+        <Breadcrumbs items={[{ label: "Tags", href: "/tags" }, { label: `#${tag}` }]} />
+      </div>
 
       <div className="space-y-8">
         {/* Tag Header */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-4 animate-fade-slide-in">
           <div className="flex items-center justify-center gap-2">
             <Hash className="h-8 w-8 text-primary" />
             <h1 className="text-4xl md:text-5xl font-bold">{tag}</h1>
@@ -67,7 +69,7 @@ export default async function TagPage({ params }: TagPageProps) {
         {tagPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tagPosts.map((post) => (
-              <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-slide-in">
                 <div className="aspect-video relative">
                   <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
                 </div>
@@ -110,7 +112,7 @@ export default async function TagPage({ params }: TagPageProps) {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
+          <div className="text-center py-12 animate-fade-slide-in">
             <p className="text-muted-foreground text-lg">No posts found with this tag.</p>
             <Link href="/posts" className="text-primary hover:underline mt-2 inline-block">
               Browse all posts

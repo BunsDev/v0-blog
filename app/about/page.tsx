@@ -15,11 +15,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="container py-8">
-      <Breadcrumbs items={[{ label: "About" }]} />
+      <div className="animate-fade-slide-in">
+        <Breadcrumbs items={[{ label: "About" }]} />
+      </div>
 
       <div className="space-y-16">
         {/* Hero Section */}
-        <section className="text-center space-y-6">
+        <section className="text-center space-y-6 animate-fade-slide-in">
           <h1 className="text-4xl md:text-5xl font-bold">About TechBlog</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We're a community of passionate developers, designers, and tech enthusiasts sharing knowledge, insights, and
@@ -28,7 +30,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-slide-in">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">Our Mission</h2>
             <p className="text-muted-foreground text-lg">
@@ -47,10 +49,10 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section */}
-        <section className="space-y-8">
+        <section className="space-y-8 animate-fade-slide-in">
           <h2 className="text-3xl font-bold text-center">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
+            <Card className="text-center animate-fade-slide-in">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <BookOpen className="h-6 w-6 text-primary-foreground" />
@@ -64,7 +66,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center animate-fade-slide-in">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <Users className="h-6 w-6 text-primary-foreground" />
@@ -78,7 +80,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center animate-fade-slide-in">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary-foreground" />
@@ -92,7 +94,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center animate-fade-slide-in">
               <CardHeader>
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-lg flex items-center justify-center">
                   <Heart className="h-6 w-6 text-primary-foreground" />
@@ -109,7 +111,7 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-muted/50 rounded-lg p-8">
+        <section className="bg-muted/50 rounded-lg p-8 animate-fade-slide-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-primary mb-2">100+</div>
@@ -127,7 +129,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center space-y-6">
+        <section className="text-center space-y-6 animate-fade-slide-in">
           <h2 className="text-3xl font-bold">Join Our Community</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Ready to dive into our content? Explore our latest posts, discover new topics, and connect with fellow
