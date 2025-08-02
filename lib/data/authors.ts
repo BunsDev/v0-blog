@@ -201,4 +201,3 @@ export const authors: Author[] = [
     postCount: 6,
   },
 ];
-
